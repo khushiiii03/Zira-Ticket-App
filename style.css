@@ -1,0 +1,164 @@
+body{
+    margin: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+.navbar{
+    height: 12vh;
+    background-color: darkslategrey;
+    display: flex;   /*given to parent -> children side by side*/
+}
+.ticket-container{
+    height: 88vh;
+    background-color: lightgrey;
+    position: relative;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-evenly;  /*even space between tickets */
+    flex-wrap: wrap;    /*puts tickets in next row after maximum no reached */
+    overflow-y: auto;
+}
+.filter-container,
+.add-delete-container{
+    height: 8vh;
+    margin-top: 2vh;
+    margin-left: 8vw; 
+    border-radius: 3px;
+    background-color: rgb(3, 63, 63)
+}
+.filter-container{
+    width: 18vw;
+    display: flex;
+}
+.add-delete-container{
+    width: 9vw;
+    display: flex;
+    position: absolute;
+    right: 200px;
+}
+.filter{
+    height: 100%;
+    width: 25%
+}
+.pink-color-btn, 
+.skyblue-color-btn, 
+.lightgreen-color-btn, 
+.yellow-color-btn {
+    display: block;
+    width: 40%;
+    height: 40%;
+    border-radius: 3px;
+    margin-top: calc(8vh * 0.3);
+    margin-bottom: calc(8vh * 0.3);
+    margin-left: calc(4.5vw * 0.3);
+    margin-right: calc(4.5vw * 0.3);
+}
+.pink-color-btn, .modal-pink-filter, .ticket-color-pink{
+    background-color: pink;
+}
+.skyblue-color-btn, .modal-skyblue-filter, .ticket-color-skyblue{
+    background-color: skyblue;
+}
+.lightgreen-color-btn, .modal-lightgreen-filter, .ticket-color-lightgreen{
+    background-color: lightgreen;
+}
+.yellow-color-btn, .modal-yellow-filter, .ticket-color-yellow{
+    background-color: yellow;
+}
+.filter:hover{
+    background-color: dimgrey ;
+    cursor: pointer;
+}
+.filter.active {
+    background-color: black;
+    border: 3px double grey;
+
+}
+
+.add, .delete{
+    height: 100%;
+    width: 50%
+}
+.action-btn {
+    display: block;
+    height: 40%;
+    width: 40%;
+    margin-top: calc(8vh * 0.3);
+    margin-bottom: calc(8vh * 0.3);
+    margin-left: calc(4.5vw * 0.3);
+    margin-right: calc(4.5vw * 0.3);
+    background-color: white;
+    padding-left: 3%;
+}
+.add:hover, .delete:hover{
+    background-color: grey;
+    cursor: pointer; 
+}
+.modal {
+    box-shadow: 0px 0px 50px 10px gray;
+    height: 18rem;
+    width: 35rem;
+    background-color: white;
+    display: flex;
+    position: absolute;
+    top: 10rem;
+    left: calc((100vw - 35rem) / 2);
+}
+.task-to-be-added {
+    height: 100%;
+    width: 70%;
+    padding: 3rem;
+    outline: none;
+    overflow: auto;
+}
+.modal-priority-list {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    justify-content: space-between;    /*equal spaces between divs, works only with display:flex*/
+    padding: 2rem;
+    background-color: #444;
+}
+.modal-filter{
+    width: 100%;
+    height: 20%;
+}
+.modal-filter:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+.modal-filter.active {
+    border: 5px double black;
+}
+.ticket{
+    height: 9rem;
+    min-width: 16rem;
+    /* margin: 0px auto 0px auto; -> same work as space-evenly */
+    background-color: white;
+    box-shadow: 10px 10px 5px 0px grey;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.ticket-color {
+    height: 6%;
+    width: 100%;
+}
+.ticket-id {
+    height: 15%;
+    width: 100%;
+    padding: 3%;
+    color: rgb(206, 200, 200);
+    /* font-family: fantasy; */
+}
+.task {
+    height: 79%;
+    width: 100%;
+    padding: 3%; 
+}
+.ticket.active {
+    border: 3px dashed black;
+    box-shadow: 0px 0px 0px 0px;
+}
